@@ -130,7 +130,7 @@ sep search "machine learning"
 Add an entry to a Cogit.
 
 **Options:**
-- `-c, --cogit <cogit-id>` - Cogit ID to add entry to (required)
+- `-c, --cogit <id-or-slug>` - Cogit ID (e.g., `6`) or slug (e.g., `my-idea`) to add entry to (required)
 
 **Entry Types:**
 - `progress` - Track progress and updates
@@ -142,20 +142,20 @@ Add an entry to a Cogit.
 **Examples:**
 
 ```bash
-# Add a progress update
-sep add progress "Completed the authentication system" --cogit 6
+# Add a progress update (using slug)
+sep add progress "Completed the authentication system" --cogit my-project-ideas
 
-# Ask a question
+# Ask a question (using ID)
 sep add question "Should we use REST or GraphQL?" --cogit 6
 
-# Add a synthesis
-sep add synthesis "The best approach is to start simple and iterate" --cogit 6
+# Add a synthesis (using slug)
+sep add synthesis "The best approach is to start simple and iterate" --cogit api-design-notes
 
 # Document an adjustment
-sep add adjustment "Changed from MySQL to PostgreSQL for better JSON support" --cogit 6
+sep add adjustment "Changed from MySQL to PostgreSQL for better JSON support" --cogit backend-refactor
 
 # Share a resource
-sep add resource "Great article: https://example.com/api-design" --cogit 6
+sep add resource "Great article: https://example.com/api-design" --cogit learning-resources
 ```
 
 ## Configuration

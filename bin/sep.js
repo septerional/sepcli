@@ -46,7 +46,7 @@ program
 program
   .command('add <type> <content>')
   .description('Add an entry to a Cogit (types: progress, question, synthesis, adjustment, resource)')
-  .option('-c, --cogit <cogit-id>', 'Cogit ID or slug to add entry to')
+  .option('-c, --cogit <id-or-slug>', 'Cogit ID (e.g., 6) or slug (e.g., my-cogit-title)')
   .action(addCommand);
 
 program.parse();
