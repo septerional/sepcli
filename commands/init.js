@@ -18,14 +18,16 @@ async function prompt(question) {
 }
 
 export default async function initCommand() {
-  printLogo();
-  console.log(chalk.bold.blue('🚀 Septerional Sep CLI - Initialize\n'));
-  console.log('To get your API key:');
-  console.log(chalk.cyan('1. Visit https://console.septerional.com'));
-  console.log(chalk.cyan('2. Go to Settings > API Keys'));
-  console.log(chalk.cyan('3. Create a new API key\n'));
+  const gold = chalk.hex('#F7C873');
 
-  const apiKey = await prompt(chalk.yellow('? Enter your API key: '));
+  printLogo();
+  console.log(gold.bold('🚀 Septerional Sep CLI - Initialize\n'));
+  console.log('To get your API key:');
+  console.log(gold('1. Visit https://console.septerional.com'));
+  console.log(gold('2. Go to Settings > API Keys'));
+  console.log(gold('3. Create a new API key\n'));
+
+  const apiKey = await prompt(gold('? Enter your API key: '));
 
   if (!apiKey || apiKey.trim() === '') {
     console.log(chalk.red('✗ API key is required'));

@@ -4,6 +4,8 @@ import api from '../lib/api.js';
 import { hasConfig } from '../lib/config.js';
 
 export default async function createCommand(title, options) {
+  const gold = chalk.hex('#F7C873');
+
   if (!hasConfig()) {
     console.log(chalk.red('\n✗ Not authenticated. Run "sep init" first.\n'));
     process.exit(1);
@@ -23,8 +25,8 @@ export default async function createCommand(title, options) {
 
     spinner.succeed(chalk.green('Cogit created successfully!'));
 
-    console.log(chalk.bold('\n📝 Cogit Details:'));
-    console.log(chalk.cyan(`  Title: ${result.cogit.title}`));
+    console.log(gold.bold('\n📝 Cogit Details:'));
+    console.log(gold(`  Title: ${result.cogit.title}`));
     console.log(chalk.dim(`  Slug: ${result.cogit.slug}`));
     if (result.cogit.description) {
       console.log(chalk.dim(`  Description: ${result.cogit.description}`));

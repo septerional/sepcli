@@ -4,6 +4,8 @@ import api from '../lib/api.js';
 import { hasConfig } from '../lib/config.js';
 
 export default async function searchCommand(query) {
+  const gold = chalk.hex('#F7C873');
+
   if (!hasConfig()) {
     console.log(chalk.red('\n✗ Not authenticated. Run "sep init" first.\n'));
     process.exit(1);
@@ -27,13 +29,13 @@ export default async function searchCommand(query) {
       return;
     }
 
-    console.log(chalk.bold(`\n🔍 Search Results for "${query}" (${allResults.length}):\n`));
+    console.log(gold.bold(`\n🔍 Search Results for "${query}" (${allResults.length}):\n`));
 
     allResults.forEach((item, index) => {
       const isEntry = item.type === 'entry';
       const data = isEntry ? item.entry : item.cogit;
 
-      console.log(chalk.cyan(`${index + 1}. ${data.title}`));
+      console.log(gold(`${index + 1}. ${data.title}`));
       console.log(chalk.dim(`   Type: ${item.type}`));
 
       if (data.user) {

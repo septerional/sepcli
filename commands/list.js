@@ -4,6 +4,8 @@ import api from '../lib/api.js';
 import { hasConfig } from '../lib/config.js';
 
 export default async function listCommand(options) {
+  const gold = chalk.hex('#F7C873');
+
   if (!hasConfig()) {
     console.log(chalk.red('\n✗ Not authenticated. Run "sep init" first.\n'));
     process.exit(1);
@@ -22,10 +24,10 @@ export default async function listCommand(options) {
       return;
     }
 
-    console.log(chalk.bold(`\n📚 Your Cogits (${result.cogits.length}):\n`));
+    console.log(gold.bold(`\n📚 Your Cogits (${result.cogits.length}):\n`));
 
     result.cogits.forEach((cogit, index) => {
-      console.log(chalk.cyan(`${index + 1}. ${cogit.title}`));
+      console.log(gold(`${index + 1}. ${cogit.title}`));
       console.log(chalk.dim(`   ${cogit.slug}`));
       if (cogit.description) {
         console.log(chalk.dim(`   ${cogit.description.substring(0, 60)}${cogit.description.length > 60 ? '...' : ''}`));
