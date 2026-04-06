@@ -5,6 +5,7 @@ import initCommand from '../commands/init.js';
 import createCommand from '../commands/create.js';
 import listCommand from '../commands/list.js';
 import searchCommand from '../commands/search.js';
+import addCommand from '../commands/add.js';
 import { printLogo } from '../lib/logo.js';
 
 // Show logo if no arguments or just --help
@@ -41,5 +42,11 @@ program
   .command('search <query>')
   .description('Search for Cogits')
   .action(searchCommand);
+
+program
+  .command('add <type> <content>')
+  .description('Add an entry to a Cogit (types: progress, question, synthesis, adjustment, resource)')
+  .option('-c, --cogit <cogit-id>', 'Cogit ID or slug to add entry to')
+  .action(addCommand);
 
 program.parse();
