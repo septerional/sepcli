@@ -51,6 +51,19 @@ sep list --limit 20
 sep search "javascript"
 ```
 
+### 5. Add entries to your Cogits
+
+```bash
+# Add a progress update
+sep add progress "Finished the API integration" --cogit 6
+
+# Ask a question
+sep add question "Should we refactor this?" --cogit 6
+
+# Add a synthesis
+sep add synthesis "The key insight is..." --cogit 6
+```
+
 ## Commands
 
 ### `sep init`
@@ -110,6 +123,39 @@ sep search "react hooks"
 
 # Search for a specific topic
 sep search "machine learning"
+```
+
+### `sep add <type> <content>`
+
+Add an entry to a Cogit.
+
+**Options:**
+- `-c, --cogit <cogit-id>` - Cogit ID to add entry to (required)
+
+**Entry Types:**
+- `progress` - Track progress and updates
+- `question` - Ask questions or raise doubts
+- `synthesis` - Summarize conclusions or insights
+- `adjustment` - Note changes in approach or direction
+- `resource` - Share links, references, or resources
+
+**Examples:**
+
+```bash
+# Add a progress update
+sep add progress "Completed the authentication system" --cogit 6
+
+# Ask a question
+sep add question "Should we use REST or GraphQL?" --cogit 6
+
+# Add a synthesis
+sep add synthesis "The best approach is to start simple and iterate" --cogit 6
+
+# Document an adjustment
+sep add adjustment "Changed from MySQL to PostgreSQL for better JSON support" --cogit 6
+
+# Share a resource
+sep add resource "Great article: https://example.com/api-design" --cogit 6
 ```
 
 ## Configuration
