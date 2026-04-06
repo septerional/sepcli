@@ -1,0 +1,36 @@
+{
+  "name": "@septerional/sep",
+  "version": "0.1.0",
+  "description": "Septerional Sep CLI - Command-line interface for managing Cogits",
+  "main": "bin/sep.js",
+  "type": "module",
+  "bin": {
+    "sep": "./bin/sep.js"
+  },
+  "scripts": {
+    "start": "node bin/sep.js"
+  },
+  "keywords": [
+    "septerional",
+    "cogit",
+    "cli",
+    "productivity",
+    "knowledge-management"
+  ],
+  "author": "Septerional",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/septerional/sepcli.git"
+  },
+  "dependencies": {
+    "axios": "^1.14.0",
+    "chalk": "^5.6.2",
+    "commander": "^14.0.3",
+    "conf": "^15.1.0",
+    "ora": "^9.3.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
