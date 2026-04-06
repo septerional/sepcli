@@ -5,6 +5,12 @@ import initCommand from '../commands/init.js';
 import createCommand from '../commands/create.js';
 import listCommand from '../commands/list.js';
 import searchCommand from '../commands/search.js';
+import { printLogo } from '../lib/logo.js';
+
+// Show logo if no arguments or just --help
+if (process.argv.length === 2 || process.argv.includes('--help') || process.argv.includes('-h')) {
+  printLogo();
+}
 
 program
   .name('sep')

@@ -1,6 +1,7 @@
 import chalk from 'chalk';
 import { createInterface } from 'readline';
 import { setApiKey } from '../lib/config.js';
+import { printLogo } from '../lib/logo.js';
 
 async function prompt(question) {
   const rl = createInterface({
@@ -17,7 +18,8 @@ async function prompt(question) {
 }
 
 export default async function initCommand() {
-  console.log(chalk.bold.blue('\n🚀 Septerional Sep CLI - Initialize\n'));
+  printLogo();
+  console.log(chalk.bold.blue('🚀 Septerional Sep CLI - Initialize\n'));
   console.log('To get your API key:');
   console.log(chalk.cyan('1. Visit https://console.septerional.com'));
   console.log(chalk.cyan('2. Go to Settings > API Keys'));
